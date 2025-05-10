@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=GungeonGame
+comment0.text=\r\n\ GungeonGame.java\r\n\ Main\ class\ to\ run\ the\ console-based\ Gungeon\ game\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
