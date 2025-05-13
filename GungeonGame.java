@@ -1,7 +1,6 @@
 import java.util.*;
 
 /**
- * GungeonGame.java
  * Main class to run the console-based Gungeon game
  */
 public class GungeonGame {
@@ -12,7 +11,6 @@ public class GungeonGame {
 }
 
 /**
- * Game.java
  * Manages the game loop and user interaction
  */
 class Game {
@@ -26,7 +24,7 @@ class Game {
     private static final int CAMERA_SIZE = 15;
 
     public Game() {
-        dungeon = new Dungeon(50, 50); // Enlarged map
+        dungeon = new Dungeon(50, 50); 
         player = new Hero("Arin the Brave", 100);
         scanner = new Scanner(System.in);
         inventory = new ArrayList<>();
@@ -96,6 +94,7 @@ class Game {
         System.out.println("Game Over. Thanks for playing!");
     }
 
+    //The battle function manages the fight
     private void battle(Villain enemy) {
         while (enemy.getHealth() > 0 && player.getHealth() > 0) {
             System.out.println("Choose action: Attack (a), Use Item (u): ");
@@ -136,6 +135,7 @@ class Game {
         }
     }
 
+    //Function manages the use of items in your inventory either its power Elexirs or Heal Potion
     private void useItem() {
         if (inventory.isEmpty()) {
             System.out.println("No items to use.");
@@ -169,7 +169,7 @@ class Game {
             System.out.println("Invalid input.");
         }
     }
-
+    // Function allows you to skip one turn and recover you HP
     private void rest() {
         System.out.println("You rest for a while...");
         player.heal(10);

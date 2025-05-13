@@ -18,7 +18,7 @@ public class Dungeon {
         this.map = new char[height][width];
         generateMap();
     }
-
+    //Function generates map with items, walls and enemies
     private void generateMap() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
@@ -42,7 +42,7 @@ public class Dungeon {
             hazards.add(posKey(x, y));
         }
 
-        // Add items (Health Potions)
+        // Add Health Potions
         for (int i = 0; i < 10; i++) {
             int x = random.nextInt(width);
             int y = random.nextInt(height);
@@ -52,16 +52,13 @@ public class Dungeon {
             }
         }
 
-        // Add power elixirs (limit 3 max)
-        int powerElixirsPlaced = 0;
-        while (powerElixirsPlaced < 3) {
+        // Add Power Elixirs
+        for(int i = 0; i < 10; i++) {
             int x = random.nextInt(width);
             int y = random.nextInt(height);
-            String key = posKey(x, y);
             if (map[y][x] == '.') {
                 map[y][x] = '*';
-                powerUps.add(key);
-                powerElixirsPlaced++;
+                powerUps.add(posKey(x, y));
             }
         }
 
@@ -74,7 +71,7 @@ public class Dungeon {
         }
 
         // Add enemies
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 100; i++) {
             int x = random.nextInt(width);
             int y = random.nextInt(height);
             String key = posKey(x, y);
